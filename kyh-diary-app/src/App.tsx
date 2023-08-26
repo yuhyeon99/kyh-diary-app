@@ -7,9 +7,11 @@ import { TodoList } from './components/TodoList';
 function App() {
   return (
     <RecoilRoot>
-      <div>
-          <WeatherDisplay/>
-          <TodoList/>
+      <div className="wrapper">
+          <div className="wrapper-inner">
+            <WeatherDisplay/>
+            <TodoList/>
+          </div>
       </div>
     </RecoilRoot>
   );

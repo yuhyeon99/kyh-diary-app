@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { weatherState, Weather } from '../state/weatherState';
+import { weatherState } from '../state/weatherState';
+import { Weather } from '../types/types';
 
 export const WeatherDisplay: React.FC = () =>{
 
@@ -25,11 +26,11 @@ export const WeatherDisplay: React.FC = () =>{
         };
 
         getLocation();
+        
     }, []);
 
     const fetchWeatherData = async (latitude: number, longitude: number) => {
         const apiKey = process.env.REACT_APP_WEATHER_KEY;
-        // const cityName = 'Incheon';
         const response = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=kr&appid=${apiKey}`
         )
