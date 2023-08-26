@@ -1,10 +1,5 @@
 import { atom } from 'recoil';
-
-export interface Todo {
-    id: number;
-    text: string;
-    completed: boolean;
-}
+import { Todo } from '../types/types';
 
 const getStoredTodos = (): Todo[] => {
     const storedTodos = localStorage.getItem('todos');
