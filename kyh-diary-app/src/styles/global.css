@@ -1,5 +1,5 @@
 /* OPTIONS */
-*{ margin:0; padding:0; list-style:none; text-decoration:none; }
+*{ margin:0; padding:0; list-style:none; text-decoration:none; color:#fff; box-sizing:border-box; }
 html, body, #root{ height:100%; }
-.wrapper{ width:100%; height:100%; float:left; background:url('../../public/img/background.jpg') center center /cover; }
+.wrapper{ width:100%; height:100%; float:left; background:url('../../public/img/background_filter.jpg') center center /cover; }
 .wrapper .wrapper-inner{ width:1040px; margin:0 auto; }

@@ -44,7 +44,7 @@ export const TodoList: React.FC = () => {
                 <ul>
                     {todos.length === 0 ? (
                         // Todo List 가 비었을 때 레이아웃
-                        <div>새로운 TODO LIST를 추가해보세요.</div>
+                        <li>새로운 TODO LIST를 추가해보세요.</li>
                     ) : (
                         todos.map(todo => (
                             <TodoItem 

@@ -32,23 +32,21 @@ const TodoItem: React.FC<TodoProps> = ({ todo, onTodoToggleComplete, onTodoDelet
         <li>
             {editing ? (
                 <>
-                <input
-                    type="text"
-                    value={editedText}
-                    onChange={handleEditInputChange}
-                />
-                <button onClick={handleEditSave}>저장</button>
+                    <input
+                        type="text"
+                        value={editedText}
+                        onChange={handleEditInputChange}
+                    />
+                    <button onClick={handleEditSave}>저장</button>
                 </>
             ) : (
                 <>
-                <input
-                    type="checkbox"
-                    checked={todo.completed}
-                    onChange={() => onTodoToggleComplete(todo.id)}
-                />
-                {todo.text}
-                <button onClick={handleEditStart}>수정</button>
-                <button onClick={() => onTodoDelete(todo.id)}>삭제</button>
+                    <div>{todo.text}</div>
+                    <div>
+                        <img onClick={() => onTodoToggleComplete(todo.id)} src={todo.completed ? "/img/incomplete.png" : "/img/complete_2.png"} alt="incomplete" />
+                        <button onClick={handleEditStart}>수정</button>
+                        <button onClick={() => onTodoDelete(todo.id)}>삭제</button>
+                    </div>
                 </>
             )}
         </li>

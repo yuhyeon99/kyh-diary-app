@@ -7,6 +7,9 @@ import './WeatherDisplay.css';
 export const WeatherDisplay: React.FC = () =>{
 
     const [weather, setWeather] = useRecoilState(weatherState);
+    const temperature = weather.temperature;
+    const roundedTemperature = Math.round(temperature * 10) / 10;
+    const temperatureText = `${roundedTemperature.toFixed(1)}`;
 
     useEffect(() => {
         // 사용자 위치 정보 출력 함수 (브라우저 Geolocation API 활용)
@@ -46,17 +49,15 @@ export const WeatherDisplay: React.FC = () =>{
         setWeather(weatherData);
     };
 
-    if(!weather) {
-        return <div>Loading...</div>;
-    }
-
     return (
         <div className="weather-display">
             
-            <p>{weather.location}</p>
-            <img src={`http://openweathermap.org/img/w/${weather.icon}.png`} alt="" />
-            <p>{weather.description}</p>
-            <p>{weather.temperature}</p>
+            <div className="location">{weather.location}</div>
+            <div className="temperature">{temperatureText}<span>°C</span></div>
+            <div className="description">
+                <img src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} alt="icon" />
+                <p>{weather.description}</p>
+            </div>
         </div>
     )
 }
