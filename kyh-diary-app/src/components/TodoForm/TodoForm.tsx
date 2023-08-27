@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './TodoForm.css';
 
 interface TodoFormProps {
     onAddTodo: (text: string) => void;
@@ -19,7 +20,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ onAddTodo }) => {
     }
     
     return (
-        <div>
+        <div className="todo-form">
             <input 
                 type="text"
                 value={newTodoText}

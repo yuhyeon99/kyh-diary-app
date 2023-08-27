@@ -1,7 +1,7 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
-import { WeatherDisplay } from './components/WeatherDisplay';
-import { TodoList } from './components/TodoList';
+import { WeatherDisplay } from './components/WeatherDisplay/WeatherDisplay';
+import { TodoList } from './components/TodoList/TodoList';
 
 
 function App() {

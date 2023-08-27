@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { weatherState } from '../state/weatherState';
-import { Weather } from '../types/types';
+import { weatherState } from '../../state/weatherState';
+import { Weather } from '../../types/types';
+import './WeatherDisplay.css';
 
 export const WeatherDisplay: React.FC = () =>{
 
@@ -50,11 +51,12 @@ export const WeatherDisplay: React.FC = () =>{
     }
 
     return (
-        <div>
-            <h2>오늘의 날씨</h2>
-            <p>지역: {weather.location}</p>
-            <p>온도: {weather.temperature}</p>
-            <p>날씨: {weather.description} <img src={`http://openweathermap.org/img/w/${weather.icon}.png`} alt="" /></p>
+        <div className="weather-display">
+            
+            <p>{weather.location}</p>
+            <img src={`http://openweathermap.org/img/w/${weather.icon}.png`} alt="" />
+            <p>{weather.description}</p>
+            <p>{weather.temperature}</p>
         </div>
     )
 }
