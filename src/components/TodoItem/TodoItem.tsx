@@ -46,7 +46,7 @@ const TodoItem: React.FC<TodoProps> = ({ todo, onTodoToggleComplete, onTodoDelet
                 </>
             ) : (
                 <>
-                    <div className="check-area"><img onClick={() => onTodoToggleComplete(todo.id)} src={todo.completed ? "/img/complete.png" : "/img/notcomplete.png"} alt="notcomplete" /></div>
+                    <div className="check-area"><img onClick={() => onTodoToggleComplete(todo.id)} src={todo.completed ? "/img/complete.png" : "/img/incomplete.png"} alt="incomplete" /></div>
                     <div className="text-area">{todo.text}</div>
                     <div className="btn-area">
                         <img onClick={handleEditStart} src="/img/modify.png" alt="modify" />
