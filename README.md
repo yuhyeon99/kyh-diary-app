@@ -183,7 +183,7 @@ IDE: Visual Studio Code
 ------
 
 
-# 힘들었던 일
+# 4. 힘들었던 일
 
 1. 제출 마지막 날에 React.js에서 작업 한 내용을 빌드하고 배포했지만 API 요청 과정 중 오류가 발생했습니다. 또한 프로젝트를 모듈별로 나누어서 작업하려고 신경썼습니다.
 
@@ -195,7 +195,7 @@ IDE: Visual Studio Code
 
    1. Vercel에서 SSL 보안 인증서가 적용된 HTTPS 배포했습니다.
 
-## 사용기술（Skill）
+## 5. 사용기술（Skill）
 
 
 
