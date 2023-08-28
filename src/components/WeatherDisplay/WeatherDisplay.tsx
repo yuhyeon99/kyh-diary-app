@@ -47,9 +47,10 @@ export const WeatherDisplay: React.FC = () =>{
 
     const fetchWeatherData = async (latitude: number, longitude: number) => {
         const apiKey = process.env.REACT_APP_WEATHER_KEY;
-        const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=kr&appid=${apiKey}`
-        )
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=kr&appid=${apiKey}`;
+        const sanitizedApiUrl = apiUrl.replace(/"/g, '');
+        const response = await fetch(sanitizedApiUrl);
+        
         const data = await response.json();
         const weatherData: Weather = {
             location: data.name,
