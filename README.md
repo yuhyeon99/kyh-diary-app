@@ -57,7 +57,7 @@
 <br>
 
 
-## 1.5. GIt Branch관리
+## 1.2. GIt Branch관리
 
 ```
 main -- develop -- add/#1   
