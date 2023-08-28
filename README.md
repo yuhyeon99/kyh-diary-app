@@ -46,8 +46,7 @@
 
 ## 1.1. :pushpin: Commit Convention
 
-|   [Type]    |             설명              |                       예예                       |
-
+|   [Type]    |             설명              |                       예                       |
 | :---------: | :---------------------------: | :--------------------------------------------: |
 |     feat     |  기능 추가 :heavy_plus_sign:   |           "feat : TodoList add 기능 추가"           |
 |     fix     |        버그 수정 :bug:         | "fix : 이미지 업로드 버그 수정" |
@@ -57,6 +56,8 @@
 | Deployment  |                               |                                                |
 
 <br>
+
+_____
 
 
 ## 1.2. GIt Branch관리
