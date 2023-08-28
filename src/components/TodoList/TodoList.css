@@ -1,6 +1,6 @@
 /* TodoList */
 
-.todo{ padding-top:20px; display:flex; flex-direction: column; align-items: center; grid-gap:10px; }
+.todo{ padding-top:20px; display:flex; flex-direction: column; align-items: center; grid-gap:25px; }
 .todo > div{ width:650px; }
 .todo > .todo-list > ul{ width:100%; display:flex; flex-direction: column; grid-gap:10px; max-height:265px; overflow-y:auto; }
 /* 스크롤바의 폭 너비 */
