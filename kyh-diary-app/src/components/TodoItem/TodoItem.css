@@ -1,0 +1,18 @@
+.check-area{ width:5%; }
+.text-area{ width:80%; padding-left:10px; }
+.edit-area{ width:85%; }
+.edit-area input{ width:100%; border:solid 1px #fff; background:none; color:#fff; padding:10px; }
+.edit-area input::placeholder{ color:#fff; }
+.btn-area{ width:15%; display:flex; justify-content:space-evenly; }
+.btn-area > img:last-child{ float:right; }
+.todo-list img{ width:30px; filter: brightness(0) invert(1); cursor:pointer; }
+.todo-list > ul > li:hover .btn-area img{ opacity:.5; }
+.btn-area > img{ width:25px; opacity:0; }
+.btn-area > img:hover{ opacity:1 !important; }
+.text-area{ line-height:30px; }
+
+@media (max-width: 1040px) {
+    .btn-area img {
+        opacity:1;
+    }
+}

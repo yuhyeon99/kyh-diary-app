@@ -1,0 +1,18 @@
+/* WeatherDisplay */
+.weather-display{ padding-top:40px; display:flex; flex-direction: column; align-items: center; }
+.weather-display > .location{ font-size:36px; font-weight:bold; }
+.weather-display > .temperature{ font-size:22px; padding-top:10px; }
+.weather-display > .temperature > span{ font-size:15px; }
+.weather-display > .description{ text-align: center; }
+.weather-display > .description > img{ margin:-10px 0; }
+.weather-display > .description > p{ font-size:25px; margin-top:-10px; }
+.weather-display > .date{ font-size:20px; }
+
+/* Loading */
+.loading-container { display: flex; align-items: center; justify-content: center; height: 222px; }
+.loading-circle { width: 40px; height: 40px; border: 3px solid #ccc; border-top: 3px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite; }
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

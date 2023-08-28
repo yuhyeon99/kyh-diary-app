@@ -1,0 +1,25 @@
+/* TodoList */
+
+.todo{ padding-top:20px; display:flex; flex-direction: column; align-items: center; grid-gap:10px; }
+.todo > div{ width:650px; }
+.todo > .todo-list > ul{ width:100%; display:flex; flex-direction: column; grid-gap:10px; max-height:265px; overflow-y:auto; }
+/* 스크롤바의 폭 너비 */
+.todo > .todo-list > ul::-webkit-scrollbar {
+    width: 5px;  
+}
+
+.todo > .todo-list > ul::-webkit-scrollbar-thumb {
+    background: #999; /* 스크롤바 색상 */
+    border-radius: 10px; /* 스크롤바 둥근 테두리 */
+}
+
+.todo > .todo-list > ul::-webkit-scrollbar-track {
+    background: rgba(37, 37, 37, 0.1);  /*스크롤바 뒷 배경 색상*/
+}
+.todo > .todo-list > ul > li{ width:100%; display:flex; flex-wrap:wrap; border-bottom:solid 1px #999; padding:5px 7px; align-items:center; word-break: break-all; }
+
+@media (max-width: 1040px) {
+    .todo > div {
+        width:80%;
+    }
+}
