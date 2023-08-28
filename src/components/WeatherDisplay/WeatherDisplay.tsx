@@ -73,7 +73,7 @@ export const WeatherDisplay: React.FC = () =>{
                     <div className="location">{weather.location}</div>
                     <div className="temperature">{temperatureText}<span>°C</span></div>
                     <div className="description">
-                        <img src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} alt="icon" />
+                        <img src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`} alt="icon" />
                         <p>{weather.description}</p>    
                     </div>
                     <div className="date">
