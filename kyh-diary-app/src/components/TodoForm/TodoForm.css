@@ -1,4 +1,4 @@
 /* TodoForm */
-.todo-form{  }
-.todo-form > input{ border:solid 1px #fff; background:none; color:#fff; padding:10px; width:100%; }
+
+.todo-form > input{ border:solid 1px #fff; background:none; color:#fff; padding:15px 10px; width:100%; font-size:15px; }
 .todo-form > input::placeholder{ color:#fff; }

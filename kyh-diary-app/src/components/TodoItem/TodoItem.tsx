@@ -32,20 +32,25 @@ const TodoItem: React.FC<TodoProps> = ({ todo, onTodoToggleComplete, onTodoDelet
         <li>
             {editing ? (
                 <>
-                    <input
-                        type="text"
-                        value={editedText}
-                        onChange={handleEditInputChange}
-                    />
-                    <button onClick={handleEditSave}>저장</button>
+                    <div className="edit-area">
+                        <input
+                            type="text"
+                            value={editedText}
+                            onChange={handleEditInputChange}
+                        />
+                    </div>
+                    <div className="btn-area">
+                        <img onClick={handleEditSave} src="/img/modify_complete.png" alt="modify_complete" />
+                        <img onClick={() => onTodoDelete(todo.id)} src="/img/delete.png" alt="delete" />
+                    </div>
                 </>
             ) : (
                 <>
-                    <div>{todo.text}</div>
-                    <div>
-                        <img onClick={() => onTodoToggleComplete(todo.id)} src={todo.completed ? "/img/incomplete.png" : "/img/complete_2.png"} alt="incomplete" />
-                        <button onClick={handleEditStart}>수정</button>
-                        <button onClick={() => onTodoDelete(todo.id)}>삭제</button>
+                    <div className="check-area"><img onClick={() => onTodoToggleComplete(todo.id)} src={todo.completed ? "/img/complete.png" : "/img/incomplete.png"} alt="incomplete" /></div>
+                    <div className="text-area">{todo.text}</div>
+                    <div className="btn-area">
+                        <img onClick={handleEditStart} src="/img/modify.png" alt="modify" />
+                        <img onClick={() => onTodoDelete(todo.id)} src="/img/delete.png" alt="delete" />
                     </div>
                 </>
             )}
