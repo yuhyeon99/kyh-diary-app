@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { weatherState } from '../../state/weatherState';
-import { Weather } from '../../types/types';
+import { fetchWeatherData } from '../../api/fetchWeatherData';
 import './WeatherDisplay.css';
 
 export const WeatherDisplay: React.FC = () =>{
@@ -27,8 +27,14 @@ export const WeatherDisplay: React.FC = () =>{
                 navigator.geolocation.getCurrentPosition(
                     async (position) => {
                         const { latitude, longitude } = position.coords;
-                        await fetchWeatherData(latitude, longitude);
-                        setIsLoading(false);
+                        try{
+                            const weatherData = await fetchWeatherData(latitude, longitude);
+                            setWeather(weatherData);
+                            setIsLoading(false);
+                        }catch (error) {
+                            console.log(error);
+                            setIsLoading(false);
+                        }
                     },
                     (error) => {
                         console.error(error);
@@ -44,23 +50,6 @@ export const WeatherDisplay: React.FC = () =>{
         getLocation();
         
     }, []);
-
-    const fetchWeatherData = async (latitude: number, longitude: number) => {
-        const apiKey = process.env.REACT_APP_WEATHER_KEY;
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=kr&appid=${apiKey}`;
-        const sanitizedApiUrl = apiUrl.replace(/"/g, '');
-        const response = await fetch(sanitizedApiUrl);
-        
-        const data = await response.json();
-        const weatherData: Weather = {
-            location: data.name,
-            temperature: data.main.temp,
-            description: data.weather[0].description,
-            icon: data.weather[0].icon,
-        };
-
-        setWeather(weatherData);
-    };
 
     return (
         <div className="weather-display">
