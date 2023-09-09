@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import { todoState } from '../../state/todoState';
-import TodoForm from '../TodoForm/TodoForm';
-import TodoItem from '../TodoItem/TodoItem';
+import TodoForm from '../TodoForm';
+import TodoItem from '../TodoItem';
 import { addTodo, toggleTodoComplete, deleteTodo, useLocalStorage } from '../../actions/todoActions';
 import './TodoList.css';
 
